@@ -2,7 +2,7 @@ import bcrypt from 'bcrypt';
 import { db } from '@vercel/postgres';
 import { invoices, customers, revenue, users } from '../lib/placeholder-data';
 
-console.log("Here");
+/*
 const client = await db.connect();
 console.log("There");
 
@@ -102,8 +102,11 @@ async function seedRevenue() {
 
   return insertedRevenue;
 }
+*/
 
 export async function GET() {
+  return Response.json({ message: 'Not seeded' });
+  /*
   try {
     await client.sql`BEGIN`;
     await seedUsers();
@@ -117,4 +120,5 @@ export async function GET() {
     await client.sql`ROLLBACK`;
     return Response.json({ error }, { status: 500 });
   }
+  */
 }
